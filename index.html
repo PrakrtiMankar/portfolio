@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakrti's Portfolio</title>
+    <style>
+        body{
+            background-color: rgb(3, 1, 11);
+            font-family: monospace;
+            color: white;
+            padding-top: 14vh;
+        }
+
+        .top-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            /* background-color: #6a9afc; */
+        }
+
+        .profile-gradient {
+            width: 12vw;
+            height: 12vw;
+            padding: 1vw;
+            border-radius: 50%;
+            background: linear-gradient(0.25turn, #6a9afc, #ade8f7);
+            margin-bottom: 8vh;
+        }
+
+        .profile-gradient img {
+            width: 11.6vw;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 0.3vw solid black;
+        }
+
+        .profile-gradient:hover {
+            transform: rotate(-10deg) scale(1.1);
+            transition: 0.3s all ease-in;
+        }
+
+        .profile-gradient:not(:hover) {
+            transform: rotate(8deg) scale(1);
+            transition: 0.6s all ease-in;
+        }
+
+        #pop-star {
+            position: absolute;
+            margin-top: -2vh;
+            width: 20vw;
+            margin-right: -54vw;
+        }
+
+        #pop-star:hover {
+            transform: rotate(-0deg) scale(0.8);
+            transition: 0.4s all ease;
+        }
+
+        #pop-star:not(:hover){
+            transform: rotate(20deg) scale(0.6);
+            opacity: 0;
+            transition: 0.6s all ease-in;
+        }
+
+        .top-section h1 {
+            font-size: 6vw;
+            margin: 0vh auto;
+            color:  #bb9df4;
+        }
+
+        .top-section h1:hover {
+            color: #d89df4;
+            letter-spacing: 0.08px;
+        }
+
+        #wave1 {
+            width: 54vw;
+            margin: 4vh auto 2vh auto;
+        }
+
+        #wave1:hover {
+            transform: scale(1.5);
+            transform: scale(1.05, 1.05);
+            transition: 0.2s ease-in;
+            margin: 3.95vh auto 2.11vh auto;
+        }
+
+        /* skill section */
+        .skill-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2vw;
+            /* background-color: aquamarine; */
+        }
+
+        .skill-box h1 {
+            margin-top: 0vh;
+        }
+
+        .skill-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* margin: 0vh 0vw 3vh -2vw; */
+        }
+
+        .skill-box ul > li {
+            font-size: 2vw;
+            border-radius: 2vw;
+            border: 3.4px solid #bb9df4;
+            padding: 0.6vw 2vw;
+            color: rgb(212, 255, 110);
+            margin: 2.6vw 1.4vw 1vw 1.4vw;
+        }
+
+        .skill-box ul > li:hover {
+            transform: scale(1.06);
+            background-color: #ffffff10;
+            border: 3.4px solid #d89df4;
+            font-weight: 600;
+            color: rgb(205, 252, 95);
+            box-shadow: #e09df4 0px 0px 8px;
+        }
+
+        .skill-box ul > li:not(:hover) {
+            transform: scale(1);
+            transition: 0.6s all ease-out;
+        }
+
+        #wave2 {
+            width: 24vw;
+            margin: -6vh auto 0vh auto;
+        }
+
+        #wave2:hover {
+            transform: scale(1.05, 1.05);
+            transition: 0.2s ease-in;
+            margin: -6vh auto 0vh auto;
+        }
+
+        #wave2:not(:hover) {
+            transform: scale(1);
+            transition: 0.5s ease-in;
+        }
+
+        /* project section */
+        
+        .project-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-box h1 {
+            font-size: 3.2vw;
+            letter-spacing: 1.2px;
+            margin-top: 10vh;
+            margin-bottom: 6vh;
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 6vh;
+            /* background-color: beige; */
+        }
+
+        #project-stars{
+            position: absolute;
+            right: 0;
+            width: 15vw;
+            margin-right: 15vw;
+        }
+
+        .project-info div {
+            width: 20vw;
+            font-size: 1.3vw;
+            margin-bottom: 7vw;
+            color: #ade8f7;
+        }
+
+        .project-box div:first-child {
+            margin-bottom: 0vh;
+            text-align: center;
+            font-size: 1.6vw;
+            color: #6a9afc;
+        }
+
+        .left-info:hover {
+            transform: scale(1.1) rotate(-0.02turn);
+            transition: 0.3s all ease-in;
+            border-radius: 1vw;
+            box-shadow: #7ee4fe 0.2px 0.4px 8px;
+        }
+
+        .right-info {
+            padding: 0vh 0.6vw 0vw 1.6vw
+        }
+
+        .right-info:hover {
+            color: rgb(0, 217, 255);
+            transform: scale(1.1) rotate(0.01turn);
+            transition: 0.3s all ease-in;
+            border: 3px dotted #ade8f7d8;
+            border-radius: 1.4vw;
+        }
+
+        #wave3 {
+            width: 28vw;
+            margin-left: -2vw;
+            margin-right: 6vw;
+            transform: rotate(-0.02turn);
+        }
+
+        #wave3:hover {
+            transform: scale(0.98) rotate(-0.02turn);
+        }
+
+        /* college section */
+
+        .college-box {
+            /* background-color: #d89df4; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0vh 3vw 0vh 7vw;
+            margin: 10vh auto 48vh auto;
+        }
+
+        .college-box h1 {
+            font-size: 3vw;
+            margin-top: 0vh;
+            color: #6ab3fc;
+        }
+
+        .college-box h2 {
+            font-size: 2vw;
+            color: #ade8f7;
+            margin: -2vh auto 6vh auto;
+        }
+
+        .college-box p {
+            width: 46vw;
+            font-size: 1.6vw;
+            font-weight: 600;
+            line-height: 7vh;
+        }
+
+        .college-img div:first-child {
+            background-color: rgb(242, 250, 255);
+            margin-bottom: -1vw;
+            padding: 0.6vw;
+            padding-bottom: 2vw;
+            border-radius: 1vw;
+            transform: rotate(-0.03turn);
+            z-index: -2;
+        }
+
+        .college-img div:first-child:hover {
+            transform: scale(1.08) rotate(-0.02turn);
+            transition: 0.2s all ease-in;
+        }
+
+        .college-img div:nth-child(2) {
+            position: absolute;
+            margin-left: 10vw;
+            padding: 0.6vw;
+            padding-bottom: 2vw;
+            border-radius: 1vw;
+            transform: rotate(0.025turn);
+            background-color: rgb(236, 246, 253);
+        }
+
+        .college-img div:nth-child(2):hover {
+            transform: scale(1.08) rotate(0.01turn);
+            transition: 0.2s all ease-in;
+        }
+
+        .college-img img {
+            border-radius: 0.7vw;
+            width: 28vw;
+            object-fit: contain;
+        }
+
+        #float-logo {
+            width: 13vw;
+            padding: 0.4vh 7vw;
+            object-fit: contain;
+            box-shadow: rgb(226, 225, 220) 2px 1px 4px;
+            background-color: rgb(254, 255, 255);
+        }
+
+
+        /* internship */
+        .intern-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .intern-box img {
+            border-radius: 1vw;
+        }
+
+        #project-grid {
+            width: 50vw;
+            object-fit: contain;
+            height: auto;
+            background-color: #6a9afc;
+            padding: 1.4vh 0.6vw 4.2vh 0.6vw ;
+            object-fit: contain;
+            box-shadow: rgb(226, 225, 220) 2px 1px 4px;
+            background-color: rgb(254, 255, 255);
+        }
+
+        #project-grid:hover {
+            transform: translate(25%, 0%) scale(1.18);
+            transition: 0.26s all ease-in;
+        }
+
+        #project-grid:not(:hover) {
+            transform: translate(0%, 0%) scale(1);
+            transition: 0.6s all ease-out;
+        }
+
+        #wave4 {
+            margin-top: -70vh;
+            margin-left: -10vw;
+            width: 18vw;
+            border-radius: 0vw;
+        }
+
+        #wave4:hover {
+            transform: rotate(0.02turn) scale(1.1);
+            transition: 0.3s all ease-in
+        }
+
+        .intern-info h1 {
+            font-size: 3vw;
+            color: #bb9df4;
+        }
+
+        .intern-info h2 {
+            font-size: 2.2vw;
+            color: #d89df4;
+            margin-top: -3vh;
+            margin-bottom: 4vh;
+        }
+
+        .intern-info p {
+            width: 53vw;
+            font-size: 1.6vw;
+            font-weight: 500;
+            text-align: justify;
+            margin-bottom: 10vh;
+        }
+
+
+        /* bottom box  styling */
+
+        .bottom-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: space-between;
+            margin-top: 6vh;
+            /* background-color: #6a9afc; */
+        }
+
+        .link-box{
+            display: flex;
+            flex-direction: row;
+            margin: 4vh 10vw;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .link-card:hover {
+            box-shadow: #e09df4 0px 0px 8px;
+            border-radius: 1.2vw;
+            transform: rotate3d(1, 2, 3, -2deg) scale(1.08);
+            transition: 0.1s all ease-in;
+        }
+        
+
+        .link-card img{
+            width: 6vw;
+            border-radius: 10px;
+            padding: 4vh 3vw;
+        }
+        
+
+        .link-card h2{
+            text-align: center;
+            font-size: 2vw;
+        }
+
+        a {
+            color: rgb(255, 255, 245);
+        }
+
+        .bottom-box > p {
+            font-size: 1.2vw;
+            margin-top: 4vh;
+            margin-left: auto;
+            margin-right: 2vw;
+            margin-bottom: 6vh;
+            color:gainsboro;
+        }
+
+        @media (width <= 900px) {
+
+            #wave2 {
+                margin-top: 1vw;
+            }
+
+            .college-info h2 {
+                margin-top: 1.4vw;
+                margin-bottom: 2vw;
+            }
+
+            .college-info p {
+                line-height: 4vw;
+            }
+
+            .intern-info {
+                margin-top: -30vw;
+            }
+
+
+            .intern-info h2 {
+                margin-top: 1.4vw;
+                margin-bottom: 2.2vw;
+            }
+
+            .link-card img{
+                padding: 4vh 5vw;
+
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <img
+            id="pop-star"
+            src="https://i.postimg.cc/RV9zcCFc/decor1.png"
+        />
+        <div class="profile-gradient">
+            <img 
+                src="https://avatars.githubusercontent.com/u/185363213?v=4"
+                alt="profile-picture"
+            />
+        </div>
+
+        <h1>Hi. I'm Prakrti.</h1>
+        <h1>A software developer.</h1>
+        
+        <img
+            id="wave1"
+            src="https://i.postimg.cc/YqBwfMWQ/wave.png"
+        />
+    </div>
+
+    <div class="skill-box">
+        <h1>Skills</h1>
+
+        <ul>
+            <li>Web Development</li>
+            <li>React Native</li>
+            <li>React</li>
+            <li>App Development</li>
+            <li>UI Design</li>
+            <li>JavaScript</li>
+            <li>CPP</li>
+            <li>Java</li>
+            <li>Android Studio</li>
+            <li>GitHub</li>
+        </ul>
+
+        <img
+            id="wave2"
+            alt="wavy-arrow"
+            src="https://i.postimg.cc/zGB6jy1R/wave2.png"
+        />
+    </div>
+
+    <div class="project-box">
+        <h1>About My Projects</h1>
+
+        <img
+            id="project-stars"
+            src="https://i.postimg.cc/RV9zcCFc/decor1.png"
+        />
+
+        <div class="project-info">
+            <div class="left-info">
+                <p><em>Crafted an exclusive mobile application providing household services in 2022</em></p>
+            </div>
+
+            <img
+                id="wave3"
+                alt="wavey-arrow-img"
+                src="https://i.postimg.cc/50crbpQw/wave3.png"
+            />
+
+            <div class="right-info">
+                <p>Completed my first project within 1 month using React Native, Redux and API integration.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="college-box">
+
+        <div class="college-img">
+            <div>
+                <img
+                    src="https://img.collegepravesh.com/2022/04/UIT-RGPV-Bhopal-310x165.jpg"
+                />
+            </div>
+            
+            <div>
+                <img
+                    id="float-logo"
+                    src="https://img.collegepravesh.com/2022/04/RGPV-Logo.png"
+                />
+            </div>
+            
+        </div>
+        
+
+        <div class="college-info">
+            <h1><strong>College</strong></h1>
+            <h2><em>2020-2024</em></h2>
+
+            <p>graduated from UIT RGPV Bhopal in BTech program with Information Technology specialization. </p>
+        </div>
+        
+    </div>
+
+    <div class="intern-box">
+        
+        
+        <div class="intern-info">
+
+            <h1>App Development</h1>
+            <h2><em>2023-2024</em></h2>
+
+            <p>Deployed and improved the performance of multiple mobile apps, ● used redux for dynamic state managemnet, ● leveraged a quality project structure with the team.
+                <br/><br/>Handled bugs and maintained the apps UI designs and APIs, ● build new features fo the application to enhace user experience.
+            </p>
+            <img
+                id="project-grid"
+                alt="projects-grid"
+                src="https://i.pinimg.com/736x/42/43/3b/42433bafb523d1600518404017178ff8.jpg"
+            />
+        </div>
+
+        <img
+            id="project-stars"
+            style="margin-top: 80vh; margin-right: 4vw"
+            src="https://i.postimg.cc/RV9zcCFc/decor1.png"
+        />
+        
+
+        <img
+            id="wave4"
+            src="https://i.postimg.cc/DyfMvS0Y/wave8.png"
+        />
+    </div>
+
+    <div class="bottom-box">
+
+        <img
+            id="wave1"
+            src="https://i.postimg.cc/YqBwfMWQ/wave.png"
+        />
+
+        <div class="link-box">
+            <div class="link-card">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/256/3536/3536505.png"
+                />
+                <h2><em><a href="https://www.linkedin.com/in/prakrti-mankar">LinkedIn</a></em></h2>
+            </div>
+
+            <div class="link-card">
+                <img
+                    src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+                />
+                <h2><em><a href="https://github.com/PrakrtiMankar">GitHub</a></em></h2>
+            </div>
+
+            <div class="link-card">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/256/5968/5968534.png"
+                />
+                <h2><em><a href="https://mail.google.com/mail?to=inbox@mankarprakrti@gmail.com/#compose">Email</a></em></h2>
+            </div>
+        </div>
+
+        <p>&copy; prakrti mankar</p>
+    </div>
+</body>
+</html>
